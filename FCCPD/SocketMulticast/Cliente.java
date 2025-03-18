@@ -26,6 +26,8 @@ public class Cliente implements Runnable {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         try {
+            System.out.println(
+                    "[SISTEMA] Insira qual tipo de aviso deseja receber \n 1- Avisos Gerais \n 2 - Extra Curriculares \n 3 - Ambos");
             int type = sc.nextInt();
             String msg = "";
             String nome = "";
@@ -62,6 +64,7 @@ public class Cliente implements Runnable {
         Scanner sc = new Scanner(System.in);
 
         if (nome.equals("")) {
+            System.out.println("[SISTEMA] Insira o nome");
             nome = sc.nextLine();
             envio = nome.getBytes();
             DatagramPacket pacote = new DatagramPacket(envio, envio.length, ia, 4323);
